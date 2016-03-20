@@ -26,6 +26,8 @@ class Deck
   def initialize
     #create empty array to store each card
     @deckOfCards = []
+
+    # EVENTUALLY I WANT TO TRANSFORM THIS INTO CONSTANTS
     #create array that represents all rank possibilities 
     ranks = %w(A 2 3 4 5 6 7 8 9 10 J Q K)
     #create array that represents all suit possibilities
@@ -33,10 +35,10 @@ class Deck
     #loop through suits
     suits.each do |suit|
       #loop through ranks
-      ranks.size.times do |i|
+      ranks.each do |rank|
         #instantiate each card object with a specific suit and rank
         #push each card object into the deckOfCards array
-        @deckOfCards << Card.new(ranks[i], suit)
+        @deckOfCards << Card.new(rank, suit)
       end
     end
   end
@@ -53,7 +55,7 @@ class Deck
 
 end
 
-#deck = Deck.new
+deck = Deck.new
 
 #puts deck.shuffle
 #puts deck.deal
