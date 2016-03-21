@@ -29,13 +29,13 @@ class Deck
 
     # EVENTUALLY I WANT TO TRANSFORM THIS INTO CONSTANTS
     #create array that represents all rank possibilities 
-    ranks = %w(A 2 3 4 5 6 7 8 9 10 J Q K)
+    @ranks = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"]
     #create array that represents all suit possibilities
-    suits = %w(Spades Hearts Diamonds Clubs)
+    @suits = ["spades", "hearts", "diamonds", "clubs"]
     #loop through suits
-    suits.each do |suit|
+    @suits.each do |suit|
       #loop through ranks
-      ranks.each do |rank|
+      @ranks.each do |rank|
         #instantiate each card object with a specific suit and rank
         #push each card object into the deckOfCards array
         @deckOfCards << Card.new(rank, suit)
@@ -57,8 +57,11 @@ end
 
 deck = Deck.new
 
-#puts deck.shuffle
-#puts deck.deal
+# invoke the shuffle method
+deck.shuffle
+
+# invoke the deal method
+deck.deal
 
 
 
